@@ -9,11 +9,11 @@
     
 <form action="" method="POST">
     Name: <input type="text" name="name"><br>
-    Age: <input type="number" name="Age"><br>
-    Gender: <select name="gender" id="">
-        <option value="male">Male</option>
-        <option value="female">Female</option>
-        <option value="others">Others</option>
+    Phone: <input type="number" name="no"><br>
+    Preferred Car: <select name="car" id="">
+        <option value="Toyota">Toyota</option>
+        <option value="Ford">Ford</option>
+        <option value="Tesla">Tesla</option>
     </select>
     <br>
     <button type="submit">Submit</button>
@@ -23,10 +23,11 @@
 if($_SERVER["REQUEST_METHOD"]==="POST") 
     {
         $name = $_POST["name"];
-        $age = $_POST["Age"];
-        $gender = $_POST["gender"];
+        $Phone = $_POST["no"];
+        $brand = $_POST["car"];
 
-        echo "Hello, $name. You are $age years old and identify as $gender";
+        echo "Hello, $name.  Your phone number is $Phone and your  
+preferred car brand is $brand.";
     }
 ?>
 </body>
