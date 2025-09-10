@@ -49,6 +49,19 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <!-- Bootstrap CSS v5.2.1 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+
+        <style>
+
+        .register-card {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 2rem;
+            border-radius: 1rem;
+            background: #fff;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+        }
+
+    </style>
 </head>
 
 <body>
@@ -56,53 +69,54 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <!-- place navbar here -->
     </header>
     <main>
-        <div class="container p-5 ">
-            <form action="" method="post" enctype="multipart/form-data">
-                <h2 class="text-center">Register form</h2>
-                <div class="mb-3">
-                    <label for="" class="form-label">Name <span class="text-danger">*</span></label>
-                    <input type="text" pattern="[A-Za-z]+" class="form-control" name="uname" id=""
-                        aria-describedby="helpId" placeholder="" required />
+         <div class="container">
+            <div class="register-card">
+                <h2 class="text-center text-primary">Register</h2>
+                <form action="" method="post" enctype="multipart/form-data">
+                    
+                    <div class="mb-3">
+                        <label class="form-label">Name <span class="text-danger">*</span></label>
+                        <input type="text" pattern="[A-Za-z]+" class="form-control" name="uname" required>
+                    </div>
 
-                </div>
-                <div class="mb-3">
-                    <label for="" class="form-label">Email <span class="text-danger">*</span></label>
-                    <input type="email" class="form-control" name="mail" id="" aria-describedby="helpId" placeholder=""
-                        required />
+                    <div class="mb-3">
+                        <label class="form-label">Email <span class="text-danger">*</span></label>
+                        <input type="email" class="form-control" name="mail" required>
+                    </div>
 
-                </div>
-                <div class="mb-3">
-                    <label for="" class="form-label">Phone <span class="text-danger">*</span></label>
-                    <input type="tel" class="form-control" name="phone" id="" aria-describedby="helpId" placeholder=""
-                        required />
+                    <div class="mb-3">
+                        <label class="form-label">Phone <span class="text-danger">*</span></label>
+                        <input type="tel" class="form-control" name="phone" required>
+                    </div>
 
-                </div>
-                <div class="mb-3">
-                    <label for="" class="form-label">Password <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" name="pass" id="" aria-describedby="helpId" placeholder=""
-                        required />
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Password <span class="text-danger">*</span></label>
+                            <input type="password" class="form-control" name="pass" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Confirm Password <span class="text-danger">*</span></label>
+                            <input type="password" class="form-control" name="cpass" required>
+                        </div>
+                    </div>
 
-                </div>
-
-                <div class="mb-3">
-                    <label for="" class="form-label">Confirm Password <span class="text-danger">*</span></label>
-                    <input type="password" class="form-control" name="cpass" id="" aria-describedby="helpId"
-                        placeholder="" required />
-
-                </div>
-                <div class="mb-3">
-                    <label for="" class="form-label">Choose your profile photo:</label>
-                    <input type="file" accept="image/*" class="form-control" name="pfp" id="" aria-describedby="helpId"
-                        placeholder="" />
-
-                </div>
-
-                <button type="submit" class="btn btn-success">
-                    Register
-                </button>
+                    <div class="mb-3">
+                        <label class="form-label">Profile Photo</label>
+                        <input type="file" accept="image/*" class="form-control" name="pfp">
+                    </div>
 
 
-            </form>
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary btn-lg">
+                            Register
+                        </button>
+                    </div>
+                    
+                    <div class="mb-3 mt-3">
+                        <label class="form-label">Already have an account? <a href="login.php">Sign in</a></label>
+                    </div>
+                </form>
+            </div>
         </div>
 
     </main>

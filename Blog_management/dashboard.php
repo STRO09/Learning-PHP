@@ -17,6 +17,11 @@ session_start();
     <!-- Bootstrap CSS v5.2.1 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+        <style>
+            .c:hover {
+                transform: translateY(-5px);
+            }
+        </style>
 </head>
 
 <body>
@@ -73,7 +78,7 @@ session_start();
             <?php
             while ($result->fetch()) {
                 ?>
-                <div class="card col-3 m-3 p-2">
+                <div class="card col-3 m-3 p-2 c">
                     <?php if ($blogimg != null) { ?>
                         <img class="card-img-top" src="<?= 'uploads/blogs/' . $blogimg ?>" alt="Title" height="300px"
                             width="100px" />

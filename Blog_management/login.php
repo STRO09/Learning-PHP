@@ -14,15 +14,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     );
     $sql->execute();
     $sql->store_result();
-    $sql->bind_result($id, $passhash,$uname);
+    $sql->bind_result($id, $passhash, $uname);
     $sql->fetch();
     if (password_verify($pass, $passhash)) {
         echo "<script>alert('Login successful')</script>";
-        $_SESSION["name"]=$uname;
+        $_SESSION["name"] = $uname;
         header("Location:dashboard.php");
     } else {
-        echo "<script>alert('Wrong credentials. Login failed')</script>";
-        exit;
+        echo "<script>alert('Wrong credentials. Login failed'); window.location.href= 'Login.php';</script>";
+
     }
 }
 
@@ -49,9 +49,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <!-- place navbar here -->
     </header>
     <main>
-        <div class="container p-5 ">
+        <div class="container pt-5 px-5 pb-2" style="max-width:500px; margin:150px auto; box-shadow: 0 0 25px rgba(0, 0, 0,0.1); border-radius: 1rem;">
             <form action="" method="post" enctype="multipart/form-data">
-                <h2 class="text-center">Login form</h2>
+                <h2 class="text-center text-primary">Login form</h2>
 
                 <div class="mb-3">
                     <label for="" class="form-label">Email <span class="text-danger">*</span></label>
@@ -69,6 +69,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <button type="submit" class="btn btn-primary">
                     Login
                 </button>
+                <div class="mb-3 mt-3">
+                    <label for="" class="form-label">Don't have an account? <a href="Register.php">Sign up</a></label>
+                </div>
 
 
             </form>
